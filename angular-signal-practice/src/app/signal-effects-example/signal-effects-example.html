@@ -1,0 +1,25 @@
+<h2>Step 2: Arrays & Computed</h2>
+<input #taskInput type="text" placeholder="New Task..." />
+<button (click)="addTask(taskInput.value); taskInput.value='';"> Add</button>
+<br />
+<input #strInput type="text" placeholder="str input" />
+<button (click)="addStr(strInput.value);strInput.value='';"> Add Str
+
+</button>
+
+<ul>
+    @for(task of tasks(); track task.id){
+    <li>
+        <input type="checkbox" [checked]="task.done" (click)="toggleTask(task.id)" />
+        <span>{{task.title}}</span>
+    </li>
+    }
+</ul>
+
+<ul>
+    @for(str of anotherSignal(); track str){
+    <li>
+        <span>{{str}}</span>
+    </li>
+    }
+</ul>

@@ -1,0 +1,8 @@
+ <h2>Step 6: HTTP to Signal</h2>
+    <ul>
+      @for (todo of todos(); track todo.id) {
+        <li>{{ todo.title }}</li>
+      } @empty {
+        <li>Loading tasks from API...</li>
+      }
+    </ul>

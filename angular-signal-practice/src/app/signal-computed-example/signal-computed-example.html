@@ -1,0 +1,17 @@
+ <h2>Step 2: Arrays & Computed</h2>
+<input #taskInput type="text" placeholder="New Task..."/>
+<button (click)="addTask(taskInput.value); taskInput.value='';"> Add</button>
+
+<p>
+Total Count: {{totalCount()}}
+Completed Count {{completedCount()}}
+</p>
+<ul>
+    @for(task of tasks(); track task.id){
+        <li>
+            <input type="checkbox" [checked]="task.done" 
+                    (click)="toggleTask(task.id)" />
+        <span>{{task.title}}</span>
+        </li>
+    }
+</ul>

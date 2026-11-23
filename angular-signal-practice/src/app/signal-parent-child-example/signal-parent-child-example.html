@@ -1,0 +1,14 @@
+<input #taskInput type="text" placeholder="New Task..."/>
+<button (click)="addTask(taskInput.value); taskInput.value='';"> Add</button>
+
+<ul>
+    @for(task of tasks(); track task.id){
+        <li>
+            <app-signal-item-child 
+            [title]="task.title" 
+            [done]="task.done" 
+            (toggled)="toggleTask(task.id)" >
+        </app-signal-item-child>
+        </li>
+    }
+</ul>
